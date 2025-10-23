@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Lekhak Settings</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Lekhak Settings</h1>
+        <p>Configure providers, hotkeys, prompts, and privacy options.</p>
+      </header>
+
+      <section>
+        <h2>Active Provider</h2>
+        <label>
+          Default model source
+          <select id="provider-select">
+            <option value="mock">Mock (offline demo)</option>
+            <option value="openai">OpenAI</option>
+            <option value="anthropic">Anthropic</option>
+            <option value="gemini">Google Gemini</option>
+          </select>
+        </label>
+      </section>
+
+      <section>
+        <h2>Provider API Keys</h2>
+        <div class="provider" data-provider="openai">
+          <label>OpenAI API Key <input type="password" name="openai-key" placeholder="sk-..." /></label>
+          <label>Model ID <input type="text" name="openai-model" placeholder="gpt-4o-mini" /></label>
+        </div>
+        <div class="provider" data-provider="anthropic">
+          <label>Anthropic API Key <input type="password" name="anthropic-key" placeholder="sk-ant-..." /></label>
+          <label>Model ID <input type="text" name="anthropic-model" placeholder="claude-3-5-sonnet" /></label>
+        </div>
+        <div class="provider" data-provider="gemini">
+          <label>Gemini API Key <input type="password" name="gemini-key" placeholder="AI..." /></label>
+          <label>Model ID <input type="text" name="gemini-model" placeholder="gemini-1.5-pro" /></label>
+        </div>
+      </section>
+
+      <section>
+        <h2>Hotkeys</h2>
+        <label>
+          Open chat shortcut
+          <input type="text" id="hotkey-open-chat" placeholder="Alt+W" />
+        </label>
+      </section>
+
+      <section>
+        <h2>Privacy</h2>
+        <label class="toggle">
+          <input type="checkbox" id="privacy-log" />
+          <span>Allow session logging (off by default)</span>
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="privacy-telemetry" />
+          <span>Share anonymous telemetry</span>
+        </label>
+      </section>
+
+      <section>
+        <h2>Custom Commands</h2>
+        <form id="command-form">
+          <input type="text" id="command-name" placeholder="Command name" required />
+          <textarea id="command-template" placeholder="Prompt template" required></textarea>
+          <button type="submit">Save Command</button>
+        </form>
+        <ul id="command-list"></ul>
+      </section>
+
+      <footer>
+        <button id="save-settings">Save Settings</button>
+        <span id="status"></span>
+      </footer>
+    </main>
+
+    <script type="module" src="index.js"></script>
+  </body>
+</html>

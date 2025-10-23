@@ -1,0 +1,77 @@
+:host {
+  all: initial;
+}
+
+.wandpen-tooltip {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  gap: 4px;
+  padding: 6px 8px;
+  background: rgba(24, 24, 27, 0.95);
+  color: #f9fafb;
+  border-radius: 999px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.3);
+  align-items: center;
+  z-index: 2147483647;
+}
+
+.wandpen-tooltip button {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.wandpen-tooltip button.primary {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #fff;
+}
+
+.wandpen-tooltip button:hover {
+  background: rgba(148, 163, 184, 0.25);
+}
+
+.wandpen-tooltip .separator {
+  width: 1px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.wandpen-tooltip .voice-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  margin-left: 4px;
+  background: #22c55e;
+  display: none;
+}
+
+.wandpen-tooltip .voice-indicator.active {
+  display: inline-block;
+}
+
+.wandpen-tooltip .spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-top-color: #fff;
+  border-radius: 999px;
+  animation: spin 600ms linear infinite;
+  display: none;
+}
+
+.wandpen-tooltip.loading .spinner {
+  display: inline-block;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
